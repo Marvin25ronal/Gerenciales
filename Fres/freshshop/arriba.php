@@ -107,7 +107,7 @@
             <li class="dropdown">
               <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
               <ul class="dropdown-menu">
-                <li><a href="ventas.html">Ventas</a></li>
+                <li><a href="ventas.php">Ventas</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
