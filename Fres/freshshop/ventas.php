@@ -74,14 +74,14 @@ include "arriba.php";
                     </select>
 
                     <br />
-                    <label for="habitacion">Cantidad a restar:</label>
+                    <label for="habitacion">Cantidad:</label>
                     <br />
                     <input type="number" class="form-control" name=cantidad id="cantidad" placeholder="01234">
                     <br />
                     <input id="btn" name="btn" type="submit" value="Agregar a Carretilla" class="btn alert-success" />
                     <br />
 
-                }
+                
             </div>
 
 
@@ -96,9 +96,8 @@ include "arriba.php";
                     </tr>
                 </thead>
 
-                <tbody>
-                    
-                            List<Inventario.Objetos.ObjRestaxVenta> listaKardex = $_Session["CARRETILLA"] as List<Inventario.Objetos.ObjRestaxVenta>;
+                <tbody>                   
+                            
 
                             foreach (Inventario.Objetos.ObjRestaxVenta Venta in listaKardex)
                             {
@@ -109,14 +108,17 @@ include "arriba.php";
                                     <td>@Venta.total</td>
                                 </tr>
                             }
-                        }
+                        
                     
                 </tbody>
             </table>
             <br /><br />
+            <a href="ventas.php" class="btn  btn-success">Registrar Venta</a>
+            <br /><br />            
             <a href="index.php" class="btn  btn-danger">Cancelar</a>
             <br /><br />
-            <a href="@Url.Action("registrarVenta", "MODSAL_RestarPorVenta")" class="btn  btn-success">Registrar Venta</a>
+            <a href="reporteVentas.php" class="btn  btn-warning">Reporte Ventas</a>
+            <br /><br />
         </div>
 
 
