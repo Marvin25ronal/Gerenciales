@@ -119,6 +119,18 @@ session_start();
               </ul>
 
             </li>
+
+            
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Comprar</a>
+              <ul class="dropdown-menu">
+                <li><a href="compras.php">compras</a></li>
+                <li><a href="ver_carro.php">Ver carrito</a></li>
+              </ul>
+
+            </li>
+
+
             <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
  

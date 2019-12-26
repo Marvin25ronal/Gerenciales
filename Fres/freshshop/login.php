@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
     $entro = false;
     while ($cl = mysqli_fetch_array($res)) {
         $entro = true;
-        if ($bool) {
+        if (!$bool) {
             $_SESSION["tipo"] = "admin";
         } else {
             $_SESSION["tipo"] = "client";
