@@ -1,3 +1,8 @@
+
+<?php
+	session_start();
+	include_once 'Funciones.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -27,7 +32,9 @@
   <link rel="stylesheet" href="css/responsive.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -45,7 +52,7 @@
 
           <div class="our-link">
             <ul>
-              <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+              <li><a href="login.php"><i class="fa fa-user s_color"></i> My Account</a></li>
               <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
               <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
             </ul>
@@ -103,7 +110,8 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
           <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+
             <li class="dropdown">
               <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
               <ul class="dropdown-menu">
@@ -115,8 +123,36 @@
                 <li><a href="wishlist.html">Wishlist</a></li>
               </ul>
             </li>
+			
+			<!--HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEY -->
+			<!-- ESTE ES EL MENU PARA EL ADMINISTRADOR -->
+			<?php if (isset($_SESSION['usr_rol']) and $_SESSION['usr_rol']=="1" ) { ?>
+				<li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Usuarios</a>
+              <ul class="dropdown-menu">
+                <li><a href="registro.php">Registrar</a></li>
+				<li><a href="registro.php">Modificar</a></li>
+				<li><a href="registro.php">Eliminar</a></li>
+              </ul>
+            </li>
+			
+				<?php } else { ?>
+			
+				<?php } ?>
+			
+			
+			
+			
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Proveedores</a>
+              <ul class="dropdown-menu">
+                <li><a href="CrearProveedor.php">Crear</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+			
+			
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -134,6 +170,18 @@
             </li>
           </ul>
         </div>
+		
+			<ul>
+				<?php if (isset($_SESSION['usr_id'])) { ?>
+				<li><p class="navbar-text"> <i class="btn btn-danger btn-xs" ><b><?php echo $_SESSION['usr_name']; ?></b></i></p></li>
+				 <li class="nav-item"><a class="nav-link"  href="logout.php">Cerrar Sesion</a></li>
+				<?php } else { ?>
+			
+				<?php } ?>
+			</ul>
+	
+		
+		
         <!-- End Atribute Navigation -->
       </div>
       <!-- Start Side Menu -->
