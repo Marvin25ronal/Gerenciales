@@ -1,10 +1,14 @@
 <?php
 include "arriba.php";
 include "Funciones.php";
+
+$bool = true;
 if (isset($_POST["submit"])) {
 
 
 
+
+    $bool = false;
     //nick=us&pass=pass&tel=47657228&name=nombre_completo&dir=dir&nit=123&submit=Registrar
     $var = sprintf(
         "insert into cliente values(null, '%s' , 'pass' , '%s' , '%s' , '%s' , '%s');",
@@ -20,14 +24,32 @@ if (isset($_POST["submit"])) {
 
     if ($resultado === "NO hay servidor" || $resultado === "no hay bd" || $resultado === "algo salio mal") {
 ?>
-        <div class="alert alert-warning"> <?php echo $resultado ?>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-warning"> <?php echo $resultado ?>
+            </div>
+
         </div>
+
     <?php
 
     } else {
     ?>
-        <div class="alert alert-success"> <?php echo $_POST["nick"] . " Registrado con exito." ?>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-success"> <?php echo $_POST["nick"] . " Registrado con exito." ?>
+            </div>
         </div>
+
 <?php
     }
 } else if (isset($_GET['id'])) {
@@ -38,13 +60,19 @@ if (isset($_POST["submit"])) {
         <div class="row">
             <div class="container">
 
-                <br />
-                <br />
-                <br />
+                <?php if ($bool) { ?>
+                    <br />
+                    <br />
+                    <br />
+                <?php } ?>
                 <h2>Registrarse.</h2>
-                <br>
-                <br>
-                <br>
+
+
+                <?php if ($bool) { ?>
+                    <br />
+                    <br />
+                    <br />
+                <?php } ?>
                 <div class="panel-group">
 
                     <div class="panel panel-success">
