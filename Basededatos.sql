@@ -13,13 +13,13 @@ CREATE TABLE producto(
     nombre varchar(255), 
     descripcion text, 
     precio_venta numeric(9,2), -- estos dos precios son sugeridos pero seran variables. 
-    pricio_compra numeric(9,2), 
+    precio_compra numeric(9,2), 
     stock bigint
 );
 
 CREATE TABLE cliente(
 	id int auto_increment primary key, 
-    user_naem varchar(255), 
+    user_name varchar(255), 
     pass varchar(255), 
     nombre_completo varchar(255), 
     telefono varchar(255), 
