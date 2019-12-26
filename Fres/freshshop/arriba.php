@@ -132,9 +132,10 @@ if(!isset($_SESSION)){
 				<li class="dropdown">
               <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Usuarios</a>
               <ul class="dropdown-menu">
-                <li><a href="registro.php">Registrar</a></li>
-				<li><a href="registro.php">Modificar</a></li>
-				<li><a href="registro.php">Eliminar</a></li>
+                <li><a href="Registrar-Usuario.php">Registrar</a></li>
+				<li><a href="Actualizar-Usuario.php">Modificar Usuario</a></li>
+				<li><a href="Eliminar-Usuario.php">Eliminar Usuario</a></li>
+				<li><a href="Mostrar-Lista.php">Reporte USuarios</a></li>
               </ul>
             </li>
 			
