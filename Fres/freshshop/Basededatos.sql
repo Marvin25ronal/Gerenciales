@@ -2,10 +2,13 @@ drop database if exists db_CRM;
 CREATE DATABASE db_CRM;
 use db_CRM;
 CREATE TABLE administrador(
-	id int auto_increment primary key, 
-    nombre varchar(255), 
-    user_name varchar(255), 
-    pass varchar(255)
+  id int(8) NOT NULL AUTO_INCREMENT,
+  name varchar(30) NOT NULL,
+  usuario varchar(60) NOT NULL,
+  password varchar(40) NOT NULL,
+  rol varchar(40) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `usuario` (`usuario`)
 );
 
 CREATE TABLE producto(
