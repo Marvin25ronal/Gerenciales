@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -116,10 +120,12 @@
 
             </li>
             <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
-
-
-
             <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
+ 
+            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+ 
+            <li class="nav-item"><a class="nav-link" href="login.php?log=2">logout</a></li>
+            <li class="nav-item"><?php   if (isset($_SESSION["tipo"])) { echo "Bienvenido " . $_SESSION["nick"]; }    ?></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->

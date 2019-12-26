@@ -1,18 +1,31 @@
 <?php
 include "arriba.php";
 include "Funciones.php";
+
+
+if (isset($_SESSION["tipo"])) {
+    if ($_SESSION["tipo"] != "admin") {
+?>
+        <script type="text/javascript">
+            window.location = "index.php";
+        </script>
+    <?php
+    }
+}
+
+
 if (isset($_POST["submit"])) {
     $empresa = $_POST['empresa'];
     $nombre = $_POST['nombre'];
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];
     $insertar = "insert into proveedor(nombre_empresa,nombre_contacto,telefono_contacto,direccion) values (\"" . $empresa . "\",\"" . $nombre . "\",\"" . $telefono . "\",\"" . $direccion . "\");";
-    if(isset($_POST['guardar'])){
-        $insertar="update proveedor set nombre_empresa=\"".$empresa."\", nombre_contacto=\"".$nombre."\", telefono_contacto=\"".$telefono."\", direccion=\"".$direccion."\" where id=\"".$_POST['guardar']."\";";
+    if (isset($_POST['guardar'])) {
+        $insertar = "update proveedor set nombre_empresa=\"" . $empresa . "\", nombre_contacto=\"" . $nombre . "\", telefono_contacto=\"" . $telefono . "\", direccion=\"" . $direccion . "\" where id=\"" . $_POST['guardar'] . "\";";
     }
     $resultado = queryLog($insertar);
     if ($resultado === "NO hay servidor" || $resultado === "no hay bd" || $resultado === "algo salio mal") {
-?>
+    ?>
         <div class="alert alert-success"> <?php echo $resultado ?>
         </div>
     <?php
@@ -60,7 +73,7 @@ if (isset($_GET['id'])) {
                                         <label for="exampleInputEmail1">Direccion</label>
                                         <input type="text" class="form-control" name="direccion" value="<?php echo $cl[4]; ?>" required>
                                     </div>
-                                    <input type="text" name="guardar" hidden value="<?php echo $cl[0];?>">
+                                    <input type="text" name="guardar" hidden value="<?php echo $cl[0]; ?>">
                                     <input type="submit" name="submit" value="Guardar" class="btn btn-info">
                                 </form>
 
@@ -74,9 +87,9 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </div>
-    <?php
-    } else {
-    ?>
+<?php
+} else {
+?>
     <div class="categories-shop">
         <div class="container">
             <div class="row">

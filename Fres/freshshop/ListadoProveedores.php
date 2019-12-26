@@ -1,6 +1,19 @@
 <?php
 include "arriba.php";
 include "Funciones.php";
+
+
+if (isset($_SESSION["tipo"])) {
+    if ($_SESSION["tipo"] != "admin") {
+?>
+        <script type="text/javascript">
+            window.location = "index.php";
+        </script>
+<?php
+    }
+}
+
+
 if (isset($_GET['prov'])) {
     $patron=$_GET['prov'];
     $consulta="select * from proveedor where nombre_contacto like '%".$patron."%';";

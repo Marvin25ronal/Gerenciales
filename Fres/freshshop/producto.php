@@ -3,6 +3,16 @@ include "arriba.php";
 include "connection.php";
 
 
+if (isset($_SESSION["tipo"])) {
+    if ($_SESSION["tipo"] != "admin") {
+?>
+        <script type="text/javascript">
+            window.location = "index.php";
+        </script>
+<?php
+    }
+}
+
 $action = "Guardar";
 
 if (isset($_GET["acc"])) {
@@ -41,7 +51,7 @@ $p_venta = 0;
 $p_compra = 0;
 $desc = "";
 
-if(isset($_GET["el"])){
+if (isset($_GET["el"])) {
     $var = "delete from producto where id = " . $_GET["el"];
     query($var);
 }

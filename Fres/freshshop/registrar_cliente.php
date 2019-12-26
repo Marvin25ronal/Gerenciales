@@ -2,6 +2,16 @@
 include "arriba.php";
 include "Funciones.php";
 
+
+
+if (isset($_SESSION["tipo"])) {
+?>
+    <script type="text/javascript">
+        window.location = "index.php";
+    </script>
+    <?php
+}
+
 $bool = true;
 if (isset($_POST["submit"])) {
 
@@ -23,7 +33,7 @@ if (isset($_POST["submit"])) {
     $resultado = queryLog($var);
 
     if ($resultado === "NO hay servidor" || $resultado === "no hay bd" || $resultado === "algo salio mal") {
-?>
+    ?>
         <br>
         <br>
         <br>
