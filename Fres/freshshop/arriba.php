@@ -1,5 +1,6 @@
 <?php
 session_start();
+//include_once "Funciones.php";
 ?>
 
 <!DOCTYPE html>
@@ -123,34 +124,15 @@ session_start();
             </li>
 
 
+            <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
 
+            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 
-            <?php if (!isset($_SESSION["tipo"])) { ?>
-              <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
-              <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-
-            <?php } ?>
-            <?php if (isset($_SESSION["tipo"])) {
-              if ($_SESSION["tipo"] == "admin") {
-            ?>
-                <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
-                <li class="dropdown">
-                  <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Proveedores</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="CrearProveedor.php">Crear</a></li>
-                    <li><a href="ListadoProveedores.php">Listado</a></li>
-                  </ul>
-
-                </li>
-
-              <?php
-              }
-
-              ?>
-              <li class="nav-item"><a class="nav-link" href="login.php?log=2">logout</a></li>
-              <li class="nav-item"><?php echo "Bienvenido " . $_SESSION["nick"];     ?></li>
-
-            <?php } ?>
+            <li class="nav-item"><a class="nav-link" href="login.php?log=2">logout</a></li>
+            <li class="nav-item"><?php if (isset($_SESSION["tipo"])) {
+                                    echo "Bienvenido " . $_SESSION["nick"];
+                                  }    ?></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
