@@ -1,5 +1,6 @@
 <?php
 session_start();
+//include_once "Funciones.php";
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +124,10 @@ session_start();
             </li>
 
 
+            <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
 
+            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 
             <?php if (!isset($_SESSION["tipo"])) { ?>
               <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
