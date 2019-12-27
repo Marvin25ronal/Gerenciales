@@ -142,6 +142,7 @@ session_start();
                   </ul>
 
                 </li>
+                <li class="nav-item"><a class="nav-link" href="registrar_admins.php">Registrar Administradores</a></li>
 
               <?php
               }

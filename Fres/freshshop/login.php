@@ -9,13 +9,12 @@ if (isset($_SESSION["tipo"])) {
 
     if (isset($_GET["log"])) {
         session_destroy();
-    } else {
-?>
+    } ?>
         <script type="text/javascript">
             window.location = "index.php";
         </script>
     <?php
-    }
+    
 }
 
 $bool = true;
