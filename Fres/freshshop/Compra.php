@@ -27,6 +27,8 @@ if (isset($_GET['fun'])) {
         $_SESSION['matriz']=$nueva;
         print_r($nueva);
         header("Location: ver_carro.php");
+    }else if($fun==3){
+       // Pagar();
     }
 }
 function Agregar($id, $cantidad)
@@ -60,3 +62,8 @@ function Agregar($id, $cantidad)
     $_SESSION['matriz'] = $matriz;
     header("Location: compras.php");
 }
+function Pagar(){
+    session_start();
+
+}
+

@@ -2,6 +2,9 @@
 include "arriba.php";
 include "Funciones.php";
 //session_start();
+if(!isset($_SESSION['matriz'])){
+    $_SESSION['matriz']=[];
+}
 $cant = count($_SESSION['matriz']);
 ?>
 <div class="categories-shop">
@@ -13,6 +16,14 @@ $cant = count($_SESSION['matriz']);
                     <div class="panel panel-success">
                         <div class="panel-heading">Selecciones los productos
                             <button class="btn btn-danger" onclick="Limpiar()">Limpiar</button>
+                            <?php 
+                                if($cant>0){
+                                    ?>
+                                    <button class="btn btn-primary" onclick="Pagar()">Pagar</button>
+                                    <?php
+                                }
+                                
+                            ?>
                         </div>
                         <div class="panel-body">
                             <table class="table">
@@ -76,6 +87,9 @@ $cant = count($_SESSION['matriz']);
     }
     function Remover(id){
         window.location='Compra.php?fun=1&id='+id;
+    }
+    function Pagar(){
+        window.location='Pagar.php';
     }
 </script>
 <?php
