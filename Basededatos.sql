@@ -78,3 +78,5 @@ insert into producto values(null,"Zanahoria","Es naranja",10,5,100,"img/Zanahori
 
 insert into producto values(null,"Tomate","Es rojo",10,5,100,"img/tomate.jpg");
 insert into producto values(null,"papaya","Es cafe",10,5,100,"img/papaya.jpg");
+
+insert into administrador values(null,"admin","admin","123");

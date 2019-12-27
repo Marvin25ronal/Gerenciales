@@ -134,6 +134,14 @@ session_start();
                   </ul>
 
                 </li>
+                <li class="dropdown">
+                  <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Facturas</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="ListadoFacturas.php">Listado</a></li>
+                   
+                  </ul>
+
+                </li>
                 <li class="nav-item"><a class="nav-link" href="registrar_admins.php">Registrar Administradores</a></li>
 
               <?php
