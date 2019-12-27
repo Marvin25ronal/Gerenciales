@@ -1,5 +1,6 @@
 <?php
 session_start();
+//include_once "Funciones.php";
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +121,7 @@ session_start();
 
             </li>
 
-            
+
             <li class="dropdown">
               <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Comprar</a>
               <ul class="dropdown-menu">
@@ -133,11 +134,13 @@ session_start();
 
             <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="registrar_cliente.php">Registrarse</a></li>
- 
+
             <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
- 
+
             <li class="nav-item"><a class="nav-link" href="login.php?log=2">logout</a></li>
-            <li class="nav-item"><?php   if (isset($_SESSION["tipo"])) { echo "Bienvenido " . $_SESSION["nick"]; }    ?></li>
+            <li class="nav-item"><?php if (isset($_SESSION["tipo"])) {
+                                    echo "Bienvenido " . $_SESSION["nick"];
+                                  }    ?></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
