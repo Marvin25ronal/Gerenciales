@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
     $bool = false;
     //nick=us&pass=pass&tel=47657228&name=nombre_completo&dir=dir&nit=123&submit=Registrar
     $var = sprintf(
-        "insert into cliente values(null, '%s' , 'pass' , '%s' , '%s' , '%s' , '%s');",
+        "insert into cliente values(null, '%s' , '%s' , '%s' , '%s' , '%s' , '%s');",
         $_POST["nick"],
         $_POST["pass"],
         $_POST["name"],
