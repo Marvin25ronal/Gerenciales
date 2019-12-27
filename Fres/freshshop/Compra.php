@@ -1,4 +1,5 @@
 <?php
+include "Funciones.php";
 if (isset($_GET['fun'])) {
     //Registrar compra y regresar
     $fun = $_GET['fun'];
@@ -30,6 +31,31 @@ if (isset($_GET['fun'])) {
     }else if($fun==3){
        // Pagar();
     }
+}else if(isset($_POST['total'])){
+    
+    session_start();
+    $consulta1="insert into pedido_cliente values(null,".$_SESSION['id'].",NOW(),0);";
+
+    $info=queryLog($consulta1);
+    $consulta2="select * from pedido_cliente order by id DESC limit 1;";
+    $ultimo=queryLog($consulta2);
+    $cl=mysqli_fetch_array($ultimo);
+    $id=$cl[0];
+    $cant=count($_SESSION['matriz']);
+    for($i=0;$i<$cant;$i++){
+        $arreglo=$_SESSION['matriz'][$i];
+        $idproducto=key($arreglo);
+        $cantidad=$arreglo[$idproducto];
+        $consulta4="Select * from producto where id=".$idproducto.";";
+        $resprecio=queryLog($consulta4);
+        $precio=mysqli_fetch_array($resprecio);
+        $consulta3="insert into detalle_cliente values(null,".$id.",".$idproducto.",".$cantidad.",".$precio[3].");";
+        queryLog($consulta3);
+        $ultimaconsulta="update producto set stock=stock-".$cantidad." where id=".$idproducto.";";
+        queryLog($ultimaconsulta);
+    }
+    $_SESSION['matriz']=[];
+    header("Location: index.php");
 }
 function Agregar($id, $cantidad)
 {

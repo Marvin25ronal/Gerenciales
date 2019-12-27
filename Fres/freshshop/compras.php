@@ -36,7 +36,7 @@ if (isset($_GET['patron'])) {
                                             <p>Disponibilidad <?php echo $cl[5]; ?></p>
                                             <h4>Q. <?php echo $cl[3]; ?></h4>
                                             <label for="">Cantidad</label>
-                                            <input type="number" id="cant" min="1" pattern="^[0-9]+" value=1>
+                                            <input type="number" id="cant<?php echo $cl[0]; ?>" min="1" pattern="^[0-9]+" value=1>
                                             <br>
                                             <br>
                                             <button class="btn btn-info" onclick="Agregar(<?php echo $cl[0]; ?>)">Agregar</button>
@@ -64,7 +64,7 @@ if (isset($_GET['patron'])) {
 </div>
 <script text="text/javascript">
     function Agregar(id) {
-        let num = document.getElementById('cant').value;
+        let num = document.getElementById('cant'+id).value;
        window.location='Compra.php?id='+id+'&cantidad='+num+'&fun=0'; 
     }
 </script>

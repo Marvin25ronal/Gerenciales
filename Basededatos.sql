@@ -70,3 +70,11 @@ CREATE TABLE detalle_cliente(
     foreign key (id_pedido) references pedido_cliente(id), 
     foreign key (id_producto) references producto(id)
 );
+
+insert into producto values(null,"Manzana","Es roja",10,5,100,"img/manzana.jpg");
+insert into producto values(null,"Naranja","Es naranja",100,5,100,"img/Naranja.jpg");
+insert into producto values(null,"Papa","Es cafe",10,5,100,"img/Papa.jpg");
+insert into producto values(null,"Zanahoria","Es naranja",10,5,100,"img/Zanahoria.jpg");
+
+insert into producto values(null,"Tomate","Es rojo",10,5,100,"img/tomate.jpg");
+insert into producto values(null,"papaya","Es cafe",10,5,100,"img/papaya.jpg");
