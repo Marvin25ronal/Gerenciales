@@ -10,11 +10,11 @@ if (isset($_SESSION["tipo"])) {
     if (isset($_GET["log"])) {
         session_destroy();
     } ?>
-        <script type="text/javascript">
-            window.location = "index.php";
-        </script>
+    <script type="text/javascript">
+        window.location = "index.php";
+    </script>
     <?php
-    
+
 }
 
 $bool = true;
@@ -41,6 +41,7 @@ if (isset($_POST["submit"])) {
     $entro = false;
     while ($cl = mysqli_fetch_array($res)) {
         $entro = true;
+        $_SESSION["id"] = $cl["id"];
         if (!$bool) {
             $_SESSION["tipo"] = "admin";
         } else {
@@ -52,6 +53,7 @@ if (isset($_POST["submit"])) {
             window.location = "index.php";
         </script>
     <?php
+        break;
     }
 
     if (!$entro) {
